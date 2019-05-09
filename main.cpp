@@ -13,7 +13,7 @@ int main() {
     cout << "Enter 2 numbers: ";
     cin >> a >> b;
 
-    cout << "GCD of a, b is " << gcd(a,b) << endl;
+    cout << "LCM of a, b is " << a*b / gcd(a,b) << endl;
 
 
     return 0;
