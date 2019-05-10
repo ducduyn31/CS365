@@ -7,18 +7,17 @@ int main() {
     cout << "How many rows: ";
     cin >> rows;
 
-    int cols = rows * 2 -1;
-    int midRow = cols / 2;
-
     for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols ; ++j) {
-            int distanceToMid = abs(j - midRow);
-            int val = i - distanceToMid;
-            if ( val < 0 ) {
-                cout << ' ';
-                continue;
-            }
-            cout << val + 1;
+        for (int j = 0; j < rows - i - 1; ++j) {
+            cout << ' ';
+        }
+        int step = 1;
+        int val = 1;
+
+        for (int k = 0; k < 2 * i + 1; ++k) {
+            cout << val;
+            val += step;
+            if (val == i + 1) step = -1;
         }
         cout << '\n';
     }
