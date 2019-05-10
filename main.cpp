@@ -15,7 +15,11 @@ int main() {
         int val = 1;
 
         for (int k = 0; k < 2 * i + 1; ++k) {
-            cout << val;
+            if (val == 1) cout << 1;
+            else if (k == i) cout << '|';
+            else if (val == 2 && step == 1) cout << '<';
+            else if (val == 2) cout << '>'; // step = -1
+            else cout << '-';
             val += step;
             if (val == i + 1) step = -1;
         }
