@@ -57,7 +57,7 @@ void mergeSort(int list[], int left, int right) {
 }
 
 int main() {
-    const int SIZE = 15;
+    const int SIZE = 100;
     int arr[SIZE] = {0}; // Set to all 0
     cout << "Enter " << SIZE << " numbers:\n";
 
