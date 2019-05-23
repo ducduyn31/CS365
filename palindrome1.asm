@@ -113,24 +113,24 @@
 	# return
 	# v1: String len
 
-    # set return value to 0
-    add     $v1,        $zero,      $zero
-    # set \n to the end of the string character
-    addi    $t0,        $zero,      10
+    	# set return value to 0
+    	add     $v1,        $zero,      $zero
+    	# set \n to the end of the string character
+    	addi    $t0,        $zero,      10
 
-    strLenLoop:
-    lb      $t1,        0($a0)	                    # char c = str[i]
-    beq     $t1,        $t0,        strLenReturn    # if (c == 0) return result
-    addi    $v1,        $v1,        1               # result += 1
-    addi    $a0,        $a0,        1               # i += 1
-    j       strLenLoop
-    strLenReturn:
-    jr      $ra
+    	strLenLoop:
+    	lb      $t1,        0($a0)	                    # char c = str[i]
+    	beq     $t1,        $t0,        strLenReturn    # if (c == 0) return result
+    	addi    $v1,        $v1,        1               # result += 1
+    	addi    $a0,        $a0,        1               # i += 1
+    	j       strLenLoop
+    	strLenReturn:
+    	jr      $ra
 
-    rmChar:
-    # arguments
-    # a0: String address
-    # a1 char index
-    add 	$t0,        $a0,        $a1
-    sb      $zero,      0($t0)
-    jr      $ra
+    	rmChar:
+    	# arguments
+    	# a0: String address
+    	# a1 char index
+    	add 	$t0,        $a0,        $a1
+    	sb      $zero,      0($t0)
+    	jr      $ra
